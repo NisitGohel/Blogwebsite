@@ -1,0 +1,260 @@
+/* style.css */
+
+/* Variables */
+:root {
+    --primary-color: #00698f;
+    --secondary-color: #0099cc;
+    --spacing-unit: 16px;
+    --border-radius: 4px;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Base */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2 {
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin-top: 0;
+    padding: 25px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin: 0 auto 11px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: var(--spacing-unit);
+    color: var(--primary-color);
+  }
+  
+  
+  li:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Header */
+  header {
+    background-color: rgb(0, 0, 0, 0.1);
+    backdrop-filter: saturate(180%) blur(20px);
+    padding: var(--spacing-unit) * 2;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 25px grey;
+    z-index: 10;
+    width: 100%;
+  }
+  
+  /* Main */
+  main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-unit);
+    padding: var(--spacing-unit) * 2;
+  }
+  
+  section {
+    padding: var(--spacing-unit);
+  }
+  
+  section:first-child {
+    border-right: 1px solid #ccc;
+  }
+  
+  /* Blog Posts */
+  section:first-child ul {
+    padding-left: 0;
+  }
+  
+  section:first-child li {
+    margin-bottom: var(--spacing-unit);
+    height: max-content;
+  }
+  
+  section:first-child li {
+    display: block;
+    padding: var(--spacing-unit);
+    background-color: #f0f0f0;
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  section:first-child li:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .row{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .photo{
+    display: flex;
+    align-items: center;
+  }
+
+  .photo img{
+    width: 25vw;
+    margin: 0 10px;
+    align-self: center;
+  }
+
+  .photo-desc p{
+    padding: 0 20px;
+  }
+
+  .sub-title{
+    margin: 0 auto 0;
+  }
+  /* Contact Us */
+  .contact{
+    position: sticky;
+    top: 21vh;
+    /* z-index: -1; */
+  }
+  #contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-unit);
+  }
+  
+  #contact-form label {
+    font-weight: bold;
+  }
+  
+  #contact-form input,
+  #contact-form textarea {
+    padding: var(--spacing-unit);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+  }
+  
+  #contact-form input[type="submit"] {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: var(--spacing-unit);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  #contact-form input[type="submit"]:hover {
+    background-color: var(--secondary-color);
+  }
+
+  input:hover{
+    cursor: auto;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #f0f0f0;
+    padding: var(--spacing-unit);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+  }
+  
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background:lightgrey; 
+    padding: 2px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color); 
+    border-radius: 5px;
+    padding: 2px;
+    margin: 2px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color); 
+  }
+
+
+  /* Media Queries */
+  @media (max-width: 768px) {
+    
+    main {
+      grid-template-columns: 1fr;
+    }
+  
+    section:first-child {
+      border-right: none;
+    }
+    .row{
+      flex-direction: column;
+    }
+    .photo{
+      display: flex;
+      justify-content: center;
+    }
+    
+    .header{
+      position: sticky;
+      top: 10vh;
+    }
+
+
+    .photo img{
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    
+    h1 {
+      font-size: 24px;
+    }
+    .row{
+      flex-direction: column;
+    }
+    
+    h2 {
+      font-size: 20px;
+    }
+    
+    .photo{
+      display: flex;
+      justify-content: center;
+    }
+    
+    
+    .photo img{
+      width: 100%;
+      margin: 20px 0;
+    }
+  }
+  
